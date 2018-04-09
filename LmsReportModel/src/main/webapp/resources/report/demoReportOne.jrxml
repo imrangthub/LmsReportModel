@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="demoReportOne" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="20" bottomMargin="20" uuid="f74a011a-2c26-45d6-91eb-59dbce7d99ba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="17"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="title" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="reportFooter" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="companyName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="isCaseNoShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isLoanTypeShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isSumShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isAverageShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isCalcuteShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isBranchNameShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isDateShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="isAmountColumnShow" class="java.lang.Boolean" isForPrompting="false"/>
+	<field name="caseNo" class="java.lang.String"/>
+	<field name="loanName" class="java.lang.String"/>
+	<field name="loanType" class="java.lang.String"/>
+	<field name="date" class="java.util.Date"/>
+	<field name="amount" class="java.lang.Double"/>
+	<field name="branchName" class="java.lang.String"/>
+	<variable name="totalAmount" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="averageAmount" class="java.lang.Integer" calculation="Average">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="32" uuid="fc025314-729c-443c-9f37-5e78868e27f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="22" uuid="19b8f4d8-cfbf-4b94-8f6e-52a166db454f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement x="216" y="0" width="78" height="20" uuid="c0a7dc57-460f-4ab8-8117-ccea9abc190a">
+					<printWhenExpression><![CDATA[$P{isLoanTypeShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Loan Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="0" width="63" height="20" uuid="14e86bd1-591d-4b69-a09c-0c7e575017a7">
+					<printWhenExpression><![CDATA[$P{isDateShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="1" width="76" height="20" uuid="44d7ecc1-a238-45ac-badc-44d93683a50f">
+					<printWhenExpression><![CDATA[$P{isAmountColumnShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="513" height="1" uuid="89bcbbdd-3d79-418f-8e12-ba93e10dc483"/>
+			</line>
+			<staticText>
+				<reportElement x="122" y="1" width="94" height="20" uuid="8e6694ab-2df5-4627-84ea-4d64678954ad"/>
+				<text><![CDATA[Loan name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="0" width="77" height="20" uuid="d124d95a-a1ab-49b5-910f-68af08f744fa">
+					<printWhenExpression><![CDATA[$P{isBranchNameShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<text><![CDATA[Branch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="1" width="74" height="20" uuid="f6ce9d1a-d82e-48f2-96fb-b9f923448d14">
+					<printWhenExpression><![CDATA[$P{isCaseNoShow}== true? true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Case no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="48" height="20" uuid="cf0bd0c6-8c91-4df5-aa99-dcad5bd3df13"/>
+				<text><![CDATA[S-NO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="9" width="67" height="20" uuid="da0a5e95-7602-4b5b-bd0a-fe0eb8adc9cb">
+					<printWhenExpression><![CDATA[$P{isDateShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="9" width="76" height="20" uuid="79219da1-9e47-48aa-8811-b323c24d064b">
+					<printWhenExpression><![CDATA[$P{isAmountColumnShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="9" width="94" height="20" uuid="b319d8cf-4e84-49df-897f-e31cf309405f"/>
+				<textFieldExpression><![CDATA[$F{loanName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="9" width="76" height="20" uuid="50e3ed98-53a5-4a97-a6bd-2796f4ea214e">
+					<printWhenExpression><![CDATA[$P{isBranchNameShow}== true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="9" width="74" height="20" uuid="8ae8255a-00ed-48c3-9e1b-f6c6afb0a2c0">
+					<printWhenExpression><![CDATA[$P{isCaseNoShow}==true? true:false]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{caseNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="9" width="78" height="20" uuid="facb3775-6d42-4220-ab2c-e4f29b3fa865">
+					<printWhenExpression><![CDATA[$P{isLoanTypeShow}== true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{loanType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="9" width="48" height="20" uuid="689bca7b-9628-4b83-a891-2702676339a9"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40">
+			<textField>
+				<reportElement x="208" y="14" width="128" height="25" uuid="03aa1725-cbf6-4229-b146-e0c587aeff5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportFooter}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="39" width="513" height="1" uuid="9d80d5f3-a11b-4507-b394-9a1815fa1ef8"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="464" y="11" width="17" height="21" uuid="f7dd0cd3-f5b9-405d-801b-0bf9a9fb91a0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="378" y="11" width="86" height="20" uuid="645885a7-5c75-4211-bf15-49bb038a5b2c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<text><![CDATA[Page:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="11" width="10" height="20" uuid="b0534ae4-f625-4a9c-b501-472a505c4fb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[of]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="493" y="11" width="21" height="21" uuid="9c4c9cd2-2c12-49cc-b51a-5bdc174503fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="11" width="77" height="20" uuid="c8902513-426f-434e-b2f4-3855c990ace2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="11" width="64" height="20" uuid="c69787bb-580a-4ee8-9718-41173b1e7a42"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="123">
+			<printWhenExpression><![CDATA[$P{isCalcuteShow}==true?true:false]]></printWhenExpression>
+			<textField>
+				<reportElement x="412" y="36" width="100" height="20" uuid="f2fc3140-27d1-4894-b488-fffcb1f87826">
+					<printWhenExpression><![CDATA[$P{isSumShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="297" y="36" width="100" height="20" uuid="47d45366-ef8a-45ab-9fd5-8a0ec8e67a82">
+					<printWhenExpression><![CDATA[$P{isSumShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Amount: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="272" y="29" width="240" height="1" uuid="74de7897-174e-48e7-88d6-39e8eb21c217"/>
+			</line>
+			<staticText>
+				<reportElement x="297" y="68" width="100" height="20" uuid="2b676835-60be-4ceb-971a-5ca4f5db1c84">
+					<printWhenExpression><![CDATA[$P{isAverageShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Average Amount:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="412" y="68" width="100" height="20" uuid="d8d8fe05-1a08-4102-9423-fb2f05c784cf">
+					<printWhenExpression><![CDATA[$P{isAverageShow}==true?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{averageAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
